@@ -65,3 +65,25 @@ print(my_car.honk())          # Call the honk method
 # Instantiate the Motorcycle subclass
 my_motorcycle = Motorcycle("Harley-Davidson", "Street 750")
 print(my_motorcycle.rev_engine())     # Call the rev_engine method
+
+
+
+class Animal:
+    def __init__(self,name):
+        self.name = name
+        
+    def sound(self):
+        return f"{self.name} is a Cow and it Moos!,"
+
+class Cow(Animal):
+    def __init__(self,name,breed):
+        super ().__init__(name)
+        self.breed = breed
+        
+    def sound(self):
+        parent_sound = super().sound()
+        return f"{parent_sound} the breed is a {self.breed}"
+    
+
+mycow = Cow("John","Fresian")
+print(mycow.sound())
